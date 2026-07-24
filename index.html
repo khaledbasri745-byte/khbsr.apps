@@ -351,10 +351,80 @@
             line-height: 1.6;
         }
 
+        .notice-box {
+            background-color: #eef2ff;
+            border-right: 4px solid #3b82f6;
+            padding: 12px;
+            border-radius: 6px;
+            color: #1e3a8a;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-top: 12px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
         .blocked-screen {
             display: none;
             text-align: center;
             padding: 40px 20px;
+        }
+
+        /* أنماط شاشة العد التنازلي والجدة */
+        .countdown-screen {
+            display: none;
+            text-align: center;
+        }
+        .grandmother-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #8c6239;
+            box-shadow: 0 4px 10px rgba(140, 98, 57, 0.2);
+            margin: 10px auto;
+            display: block;
+        }
+        .tribute-box {
+            background-color: #fdfaf7;
+            border: 1px solid #d9c5b2;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .tribute-title {
+            color: #8c6239;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .tribute-date {
+            color: #d90429;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .timer-box {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            direction: ltr;
+        }
+        .timer-segment {
+            background-color: #8c6239;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 60px;
+        }
+        .timer-num {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        .timer-label {
+            font-size: 0.75rem;
         }
 
         .support-container {
@@ -408,6 +478,46 @@
             <div class="logo-container">
                 <h1 class="kufi-title">كُنُوزُ الإِسْلَامِ</h1>
                 <div id="part-tag" class="part-indicator">المسابقة الكبرى</div>
+            </div>
+
+            <!-- شاشة العد التنازلي قبل الافتتاح -->
+            <div id="countdown-screen" class="main-container countdown-screen">
+                <div class="card">
+                    <img src="https://lh3.googleusercontent.com/d/1lxD42MD3uIOXCw9Yb_HQTv2XQglRYLFK" alt="صورة الجدة" class="grandmother-img">
+                    <div class="tribute-box">
+                        <div class="tribute-title">إهداء وترحم لروح الجدة الطاهرة رحمها الله</div>
+                        <div class="tribute-date">تاريخ الوفاة: الجمعة 07 أوت 2026</div>
+                        <p style="font-size: 0.95rem; margin: 0; line-height: 1.6;">
+                            اللهم اغفر لها وارحمها وعافها واعف عنها، وأكرم نزلها ووسع مدخلها واجعل قبرها روضة من رياض الجنة.
+                        </p>
+                    </div>
+
+                    <div class="card-title" style="text-align: center; font-size: 1.2rem; color: #8c6239;">
+                        ⏳ العد التنازلي لافتتاح المسابقة الكبرى
+                    </div>
+                    <p style="font-size: 0.95rem; text-align: center; color: #5c3a21; margin-bottom: 5px;">
+                        تفتح المسابقة رسمياً يوم الجمعة 07 أوت 2026 الساعة 14:30 مساءً
+                    </p>
+
+                    <div class="timer-box">
+                        <div class="timer-segment">
+                            <span id="timer-days" class="timer-num">00</span>
+                            <span class="timer-label">أيام</span>
+                        </div>
+                        <div class="timer-segment">
+                            <span id="timer-hours" class="timer-num">00</span>
+                            <span class="timer-label">ساعات</span>
+                        </div>
+                        <div class="timer-segment">
+                            <span id="timer-mins" class="timer-num">00</span>
+                            <span class="timer-label">دقائق</span>
+                        </div>
+                        <div class="timer-segment">
+                            <span id="timer-secs" class="timer-num">00</span>
+                            <span class="timer-label">ثواني</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="welcome-screen" class="main-container welcome-screen">
@@ -499,6 +609,13 @@
                     <div class="form-group">
                         <input type="text" id="participant-name" class="form-control" placeholder="اكتب اسمك الكامل هنا...">
                     </div>
+
+                    <div class="notice-box">
+                        📢 ملاحظة هامة جداً:<br>
+                        النتائج النهائية للمسابقة تصدر بتاريخ <b>21 نوفمبر 2026</b>.<br>
+                        علماً بأن الموقع يغلق رسمياً أمام المشاركات بتاريخ <b>01 نوفمبر 2026</b>.
+                    </div>
+
                     <div class="warning-box">
                         ⚠️ تنبيه هام جداً للمصداقية:<br>
                         أنت ملزم ومجبر الآن على تحميل ملف الـ PDF لنتيجتك المعتمدة وإرساله مباشرة دون أي تعديل لضمان احتساب علامتك في المسابقة.
@@ -571,6 +688,13 @@
                         <tbody id="table-part3-rows"></tbody>
                     </table>
                 </div>
+
+                <div class="notice-box">
+                    📢 ملاحظة هامة بعد إنهاء الاختبار:<br>
+                    النتائج النهائية تصدر بتاريخ <b>21 نوفمبر 2026</b>.<br>
+                    علماً بأن التسجيل والموقع يغلق رسمياً بتاريخ <b>01 نوفمبر 2026</b>.
+                </div>
+
                 <button class="btn primary-btn" onclick="generatePdfAndEmail()">تحميل تقرير الـ PDF التفصيلي وإرسال النتيجة</button>
             </div>
 
@@ -600,8 +724,12 @@
     </div>
 
     <script>
+        // المواعيد الرسمية للمسابقة
+        const OPENING_DATE = new Date("2026-08-07T14:30:00").getTime();
+        const CLOSING_DATE = new Date("2026-11-01T23:59:59").getTime();
+
         const quizData = [
-            // --- الجزء الأول: أسئلة بسند (15 سؤالاً) - لم يتم تغيير أي حرف بناء على طلبك
+            // --- الجزء الأول: أسئلة بسند (15 سؤالاً)
             { type: "text", weight: 2.0, part: 1, info: "أقسم الله تعالى في هذه الآية بمخلوقٍ حيواني معروف عند العرب، عُرف بالقوة والكرامة في قوله تعالى: ﴿وَالْعَادِيَاتِ ضَبْحًا﴾.", question: "ما المقصود بـ العاديات في قوله تعالى: ﴿وَالْعَادِيَاتِ ضَبْحًا﴾؟", keywords: ["الخيل", "الحصان", "الفرس", "خيل", "حصان", "فرس"], officialAnswer: "الخيل في ساحة المعارك." },
             { type: "text", weight: 2.0, part: 1, info: "ورد في الروايات أن نبيًا من بني إسرائيل وقعت له معجزة في ساحة القتال، إذ حُبست الشمس بأمر الله حتى أتمّ ما كان فيه. وقد جاء ذكر هذا المعنى في الحديث الشريف.", question: "من هو هذا النبي الذي حُبست له الشمس بأمر الله؟", keywords: ["يوشع بن نون", "يوشع", "نون"], officialAnswer: "يوشع بن نون." },
             { type: "text", weight: 2.0, part: 1, info: "ذكر الله في قصة لقاء نبيٍ من بني إسرائيل بعبدٍ صالح، علّمه من العلم ما لم يكن يعلمه، ورافقه في رحلة شهدت أحداثًا ظاهرها الاستغراب وباطنها الحكمة.", question: "من هو هذا العبد الصالح المذكور في القصة? ", keywords: ["الخضر", "خضر", "الخضر عليه السلام"], officialAnswer: "الخضر عليه السلام." },
@@ -618,7 +746,7 @@
             { type: "text", weight: 2.0, part: 1, info: "يروي القرآن الكريم حادثةً عظيمة تعرّضت فيها امرأةٌ عفيفةٌ صالحة لاتهامٍ شديد بالباطل، إذ رماها قومٌ من حولها بالافتراء دون بيّنة، فاشتدّ الأمر حتى نزل الوحي يبرّئها براءةً كاملة من فوق سبع سماوات، مبينًا أن ما قيل عنها كان كذبًا وزورًا. وقد أنزل الله في ذلك آياتٍ تتلى إلى يوم القيامة في سورةٍ كاملة، جاء فيها تبرئةٌ صريحة، وتحذيرٌ شديد من نشر مثل هذا الاتهام أو الخوض فيه.", question: "من هي المرأة التي برّأها الله في هذه الحادثة العظيمة؟", keywords: ["عائشة", "عائشه", "عائشة رضي الله عنها", "ام المؤمنين عائشة"], officialAnswer: "أم المؤمنين عائشة رضي الله عنها." },
             { type: "text", weight: 2.0, part: 1, info: "يروي أهل التاريخ والسير أن أحد القادة من الصحابة كان معروفًا بالشجاعة والبأس الشديد في القتال، حتى ذاع صيته في الفتوحات. وبعد أن تولّى قيادة بعض الجيوش في الشام، أُثيرت حوله شكاوى تتعلق بأسلوبه في الإدارة والتعامل مع الناس أثناء القيادة. فلما بلغ الأمر أمير المؤمنين عمر بن الخطاب، قام بعزله عن القيادة، مع بقاء منزلته العالية في الإسلام، وإقرار فضله وشجاعته في ميادين القتال، دون أن يمس ذلك مكانته بين الصحابة.", question: "من هو هذا الصحابي القائد الذي اشتهر بالقوة وتم عزله عن قيادة الجيش في عهد عمر بن الخطاب؟", keywords: ["خالد بن الوليد", "خالد", "سيف الله المسلول"], officialAnswer: "خالد بن الوليد رضي الله عنه." },
 
-            // --- الجزء الثاني: أسئلة خيارات مباشرة (10 أسئلة) - تم تعديلها بدقة حسب طلبك
+            // --- الجزء الثاني: أسئلة خيارات مباشرة (10 أسئلة)
             { type: "options", weight: 1.5, part: 2, question: "كم مرة ذكر نبي الله موسى عليه السلام في القرآن الكريم؟", options: ["36 مرة", "75 مرة", "136 مرة", "180 مرة"], answerIndex: 2, officialAnswer: "136 مرة" },
             { type: "options", weight: 1.5, part: 2, question: "من هو الصحابي الذي لُقب بـ أمين هذه الأمة؟", options: ["أبو عبيدة بن الجراح", "عمر بن الخطاب", "علي بن أبي طالب", "أبو بكر الصديق"], answerIndex: 0, officialAnswer: "أبو عبيدة بن الجراح" },
             { type: "options", weight: 1.5, part: 2, question: "ما هي أول صلاة فُرِضت على النبي محمد ﷺ؟", options: ["صلاة الفجر", "صلاة الظهر", "صلاة العصر", "صلاة العشاء"], answerIndex: 1, officialAnswer: "صلاة الظهر" },
@@ -630,7 +758,7 @@
             { type: "options", weight: 1.5, part: 2, question: "من هو أصغر السلاطين والخلفاء الراشدين سنّاً عند وفاته؟", options: ["أبو بكر الصديق", "عمر بن الخطاب", "عثمان بن عفان", "علي بن أبي طالب"], answerIndex: 3, officialAnswer: "علي بن أبي طالب" },
             { type: "options", weight: 1.5, part: 2, question: "كم عدد غزوات الرسول محمد ﷺ التي قاتل فيها بنفسه؟", options: ["27 غزوة", "15 غزوة", "9 غزوات", "30 غزوة"], answerIndex: 0, officialAnswer: "27 غزوة" },
 
-            // --- الجزء الثالث: فوازير دينية كتابية (10 أسئلة) - تم تعديلها وإضافة الترقيم والفواصل بدقة
+            // --- الجزء الثالث: فوازير دينية كتابية (10 أسئلة)
             { type: "text", weight: 1.5, part: 3, question: "فزورة: بنت نبي، وأخت نبي، وزوجة نبي، وابنها رُفِع إلى درجة الأنبياء؛ فمن هي؟", keywords: ["ليا", "ليّا"], officialAnswer: "ليا." },
             { type: "text", weight: 1.5, part: 3, question: "فزورة: ولد قبل أبيه، ومات قبل أمه، ودُفن في بطن جدته؛ فمن هو؟", keywords: ["هابيل"], officialAnswer: "هابيل." },
             { type: "text", weight: 1.5, part: 3, question: "فزورة: أربعة مخلوقات لم يولدوا من رحم امرأة؛ فمن هم؟", keywords: ["آدم", "حواء", "كبش إسماعيل", "ناقة صالح", "ادم", "حوا", "كبش اسماعيل", "ناقه صالح"], officialAnswer: "آدم، وحواء، وكبش إسماعيل، وناقة صالح." },
@@ -651,16 +779,75 @@
         let detailedResults = [];
         let isQuizFinishedFinished = false; 
         let isQuizStarted = false;
+        let timerInterval = null;
 
         window.onload = function() {
+            const now = new Date().getTime();
+
+            // 1. التحقق من تاريخ إغلاق المسابقة (بعد 01 نوفمبر 2026)
+            if (now > CLOSING_DATE) {
+                triggerBlockView(`
+                    🔒 المسابقة مغلقة حالياً.<br><br>
+                    <b>تاريخ الفتح:</b> الجمعة 07 أوت 2026 (14:30 مساءً)<br>
+                    <b>تاريخ الإغلاق:</b> الأحد 01 نوفمبر 2026 (23:59 مساءً)<br><br>
+                    📌 <b>تنبيه هام:</b><br>
+                    القوائم المعنية بالمسابقة النهائية، والقرعة، وكذلك المسابقة المؤهلة للمسابقة النهائية تصدر رسمياً بتاريخ <b>21 نوفمبر 2026</b>.
+                `);
+                return;
+            }
+
+            // 2. التحقق من حالات الحظر أو المشاركة المسبقة
             if (localStorage.getItem("quiz_grand_completed_2026") === "true") {
                 triggerBlockView("عذراً! لقد قمت بالإجابة على هذه المسابقة الكبرى مسبقاً ولا يمكنك الإعادة.");
+                return;
             } else if (localStorage.getItem("quiz_grand_disqualified_2026") === "true") {
                 triggerBlockView("أنت مقصي تماماً من هذه المسابقة بسبب محاولة الغش أو مغادرة نطاق الصفحة!");
+                return;
+            }
+
+            // 3. التحقق مما إذا كان الوقت قبل موعد الافتتاح (قبل 07 أوت 2026 14:30)
+            if (now < OPENING_DATE) {
+                document.getElementById("welcome-screen").style.display = "none";
+                document.getElementById("countdown-screen").style.display = "block";
+                startCountdown();
             } else {
                 loadQuestion();
             }
         };
+
+        function startCountdown() {
+            updateTimerValues();
+            timerInterval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = OPENING_DATE - now;
+
+                if (distance <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById("countdown-screen").style.display = "none";
+                    document.getElementById("welcome-screen").style.display = "block";
+                    loadQuestion();
+                } else {
+                    updateTimerValues();
+                }
+            }, 1000);
+        }
+
+        function updateTimerValues() {
+            const now = new Date().getTime();
+            const distance = OPENING_DATE - now;
+
+            if (distance < 0) return;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("timer-days").innerText = String(days).padStart(2, '0');
+            document.getElementById("timer-hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("timer-mins").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("timer-secs").innerText = String(seconds).padStart(2, '0');
+        }
 
         function startQuizNow() {
             isQuizStarted = true;
@@ -687,10 +874,11 @@
 
         function triggerBlockView(message) {
             document.getElementById("welcome-screen").style.display = "none";
+            document.getElementById("countdown-screen").style.display = "none";
             document.getElementById("quiz-screen").style.display = "none";
             document.getElementById("name-screen").style.display = "none";
             document.getElementById("result-screen").style.display = "none";
-            document.getElementById("blocked-text").innerText = message;
+            document.getElementById("blocked-text").innerHTML = message;
             document.getElementById("blocked-screen").style.display = "block";
         }
 
@@ -1010,7 +1198,7 @@
             const body = encodeURIComponent(`السلام عليكم ورحمة الله وبركاته،\n\nأرفق لكم كشف النقاط والمعدل النهائي الموثق من تطبيق مسابقة كنوز الإسلام:\n\n- اسم المتسابق الكامل: ${participantName}\n- المعدل النهائي الإجمالي: [ ${grade} / 20 ]\n- النقاط المستحقة: ${cumulativePoints.toFixed(1)} من 60\n- حالة التأهل: ${qualText}\n- الرمز الأمني للتوثيق الرقمي: [ ${securityToken} ]\n\n(ملاحظة: وثيقة الـ PDF تم حفظها في جهازي، وتم تحويل النتيجة والرمز للمراجعة).\n\nشكراً لكم.`);
 
             setTimeout(() => {
-                window.location.href = `mailto:${emailAddress}?subject=${subject}?body=${body}`;
+                window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
             }, 1200);
         }
     </script>
